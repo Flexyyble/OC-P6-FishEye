@@ -5,7 +5,6 @@ export class PhotographerCard {
         this._photographer = photographer;
     }
 
-    // Create the wrapper for the card
     getCardWrapper() {
         return createElement('div', {
             class: 'card-photographer',
@@ -14,7 +13,6 @@ export class PhotographerCard {
         });
     }
 
-    // Create the information section of the card
     createInformationSection() {
         const { location, tagline, price } = this._photographer;
 
@@ -47,7 +45,6 @@ export class PhotographerCard {
         return informationSection;
     }
 
-    // Create the link for the card
     getLink() {
         const link = createElement('a', {
             class: 'card-photographer__link',
@@ -79,7 +76,6 @@ export class PhotographerCard {
         return link;
     }
 
-    // Create the photographer card
     createCard() {
         const cardWrapper = this.getCardWrapper();
         const informationSection = this.createInformationSection();

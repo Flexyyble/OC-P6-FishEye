@@ -9,7 +9,6 @@ export class MediaCard {
         this._media.isLiked = false;
     }
 
-    // Create the section displaying media information, likes, and title
     createInformationSection() {
         const { likes, title } = this._media;
 
@@ -68,14 +67,12 @@ export class MediaCard {
         return $informationSection;
     }
 
-    // Create the section displaying media (photo or video)
     createMediaSection() {
         const $media = MediaFactory.createMedia(this._media, this._photographer).createComponent();
 
         const $mediaSection = createElement("div", {
             class: "media-card__media",
             'aria-label': `${this._media.title}, closeup view`,
-
             tabIndex: "0"
         });
         $mediaSection.append($media);
@@ -83,7 +80,6 @@ export class MediaCard {
         return $mediaSection;
     }
 
-    // Create the entire media card
     createMediaCard() {
         const $mediaCard = createElement("article", {
             class: "media-card",

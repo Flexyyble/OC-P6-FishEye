@@ -1,37 +1,52 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <title>Fisheye - photographe </title>
-  </head>
-  <body>
-    <header>
-      <img src="assets/images/logo.png" class="logo" />
-    </header>
-    <main id="main">
-      <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-      </div>
-    </main>
-    <div id="contact_modal">
-			<div class="modal">
-				<header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
-        </header>
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
-					</div>
-          <button class="contact_button">Envoyer</button>
-				</form>
-			</div>
-		</div>
-    <script src="/scripts/pages/photographer.js"></script>
-    <script src="/scripts/utils/contactForm.js"></script>
-  </body>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fisheye - photographe</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <div id="loader-container">
+    <div id="loader">
+      <div class="loader-spinner"></div>
+    </div>
+  </div>
+  <header>
+    <a href="./index.html" aria-label="Fisheye Home page">
+      <img src="assets/images/logo.png" class="logo" alt="Fisheye Home page" />
+    </a>
+  </header>
+  <main id="main">
+    <div class="photograph-header">
+      <button class="photograph-header__button" aria-label="Contact Me">
+        Contactez-moi
+      </button>
+    </div>
+    <nav class="sort-wrapper"></nav>
+    <section class="media-wrapper"></section>
+    <section class="sidebar-wrapper"></section>
+  </main>
+  <section id="contact_modal" class="modal" tabindex="-1">
+    <div class="modal__inner" role="dialog" aria-labelledby="modal__title">
+      <header>
+        <h2 class="modal__title" tabindex="0">Contactez-moi</h2>
+        <button class="modal__close" aria-label="Fermer la boîte de dialogue">
+          <img src="assets/icons/close.svg" alt="close icon" />
+        </button>
+      </header>
+      <!-- Formulaire et autres contenus de la boîte de dialogue modale -->
+    </div>
+  </section>
+  <section class="lightbox_modal" role="dialog" aria-label="image closeup view" tabindex="0"></section>
+  <script src="scripts/pages/photographer.js" type="module" defer></script>
+</body>
+
 </html>
