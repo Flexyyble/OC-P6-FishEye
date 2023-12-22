@@ -6,6 +6,7 @@ export class MediaRenderer {
     }
 
     async renderMedias(data, photographer) {
+        console.log(data);
         this.$mediaWrapper.innerHTML = '';
 
         data.forEach((media, index) => {

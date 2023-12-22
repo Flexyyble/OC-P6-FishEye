@@ -1,5 +1,6 @@
 import { ImageMedia } from '../media/imageMedia.js';
 import { VideoMedia } from '../media/VideoMedia.js';
+
 export class MediaFactory {
     static createMedia(data, photographer) {
         const { mediaType } = data;

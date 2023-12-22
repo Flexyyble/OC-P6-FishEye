@@ -23,7 +23,7 @@ class App {
             this._photographer = await this.photographerService.getPhotographer(this.params.id);
             this._medias = await this.mediaService.getMediasByPhotographerId(this._photographer.id, this._photographer);
         } catch (error) {
-            console.error(`Error fetching data: ${error.message}`);
+            console.error(`App getData : Error fetching data: ${error.message}`);
         }
     }
 
@@ -33,11 +33,14 @@ class App {
         photographHeader.createPhotographHeader();
         const sidebar = new PhotographerSidebar(this._photographer, '.sidebar-wrapper');
         sidebar.createPhotographerSidebar();
-
-        document.addEventListener('mediaSorted', (event) => {
+        console.log(this._photographer)
+        console.log(this._medias)
+        this.mediaRenderer.renderMedias(this._medias.medias, this._photographer);
+       /* document.addEventListener('mediaSorted', (event) => {
+            
             const sortedMedias = event.detail.medias;
             this.mediaRenderer.renderMedias(sortedMedias, this._photographer);
-        });
+        });*/
     }
 
     async init() {

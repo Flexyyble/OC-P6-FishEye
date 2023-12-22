@@ -9,6 +9,7 @@ export class MediaService {
     async getMediasByPhotographerId(photographerId, photographer) {
         try {
             const { media: allMedias } = await this.query.fetch();
+            
             const medias = allMedias
                 .filter((media) => media.photographerId === photographerId)
                 .map((mediaData) => new Media(mediaData));
@@ -16,10 +17,10 @@ export class MediaService {
             const totalLikes = medias.reduce((acc, media) => acc + media.likes, 0);
             photographer.totalLikes = parseInt(totalLikes);
             photographer.medias = medias;
-
+            
             return photographer;
         } catch (error) {
-            throw new Error(`Error in getMediasByPhotographerId: ${error.message}`);
+            throw new Error(`MediaService -> getMediasByPhotographerId: ${error.message}`);
         }
     }
 }
