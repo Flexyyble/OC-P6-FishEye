@@ -1,4 +1,5 @@
 import { CardFactory } from '../factories/factoryCard.js';
+import { Lightbox } from '../components/lightbox.js';
 
 export class MediaRenderer {
     constructor($mediaWrapper) {
