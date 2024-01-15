@@ -36,11 +36,11 @@ class App {
         console.log(this._photographer)
         console.log(this._medias)
         this.mediaRenderer.renderMedias(this._medias.medias, this._photographer);
-       /* document.addEventListener('mediaSorted', (event) => {
-            
+        document.addEventListener('mediaSorted', (event) => {
+
             const sortedMedias = event.detail.medias;
             this.mediaRenderer.renderMedias(sortedMedias, this._photographer);
-        });*/
+        });
     }
 
     async init() {
